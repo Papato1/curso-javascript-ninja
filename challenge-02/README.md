@@ -4,31 +4,55 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
-?
+
+> function soma (x , y) {
+...  return x + y;
+... }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-?
+
+> function soma (x , y) {
+...  return x + y;
+... }
+undefined
+> var mysoma = soma (4 , 3) + 5;
+undefined
 
 // Qual o valor atualizado dessa variável?
-?
+
+12
 
 // Declare uma nova variável, sem valor.
-?
+
+> var novasoma;
+undefined
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-?
+
+> var novavar
+undefined
+> function addValor() {
+... novavar = 30;
+... return "O valor da variável é " + novavar;
+... }
+undefined
+> addValor()
+'O valor da variável é 30'
+> /* O valor da Variável é 30 */
+undefined
+>
 
 // Invoque a função criada acima.
-?
+
 
 // Qual o retorno da função? (Use comentários de bloco).
-?
 
-/*
+> /* O valor da Variável é 30 */
+
 Crie uma função com as seguintes características:
 1. A função deve receber 3 argumentos;
 2. Se qualquer um dos três argumentos não estiverem preenchidos, a função deve retornar a string:
@@ -38,16 +62,35 @@ Crie uma função com as seguintes características:
 ?
 
 // Invoque a função criada acima, passando só dois números como argumento.
-?
+
+> function newfunction ( x ,y ,z ) {
+... if ( x === undefined || y === undefined || z === undefined){
+..... return "Preencha todos corretamente seu merdinha";
+..... }
+... return (x * y * z) + 2;
+... }
+undefined
+> newfunction (1,2)
+'Preencha todos corretamente seu merdinha'
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
+// Preencha todos corretamente seu merdinha
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
-?
+> function newfunction ( x ,y ,z ) {
+... if ( x === undefined || y === undefined || z === undefined){
+..... return "Preencha todos corretamente seu merdinha";
+..... }
+... return (x * y * z) + 2;
+... }
+undefined
+> newfunction (1,2,3)
+8
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-?
+
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -62,4 +105,20 @@ Crie uma função com as seguintes características:
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+> function newfunction ( x, y, z) {
+... if ( x!== undefined && y === undefined && z === undefined){
+..... return x;
+..... } else if ( x!== undefined && y!== undefined && z === undefined){
+..... return x + y;
+..... } else if ( x!== undefined && y!== undefined && z !== undefined) {
+..... return (x + y) / z;
+..... } else if ( x === undefined && y === undefined && z === undefined) {
+..... return false;
+..... }
+... else {
+..... return null;
+..... }
+... }
+undefined
+> newfunction (5,5,2)
+5
