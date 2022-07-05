@@ -2,7 +2,8 @@
 
 ```js
 // Declarar uma variável qualquer, que receba um objeto vazio.
-?
+
+var pessoa = {};
 
 /*
 Declarar uma variável `pessoa`, que receba suas informações pessoais.
@@ -16,14 +17,27 @@ As propriedades e tipos de valores para cada propriedade desse objeto devem ser:
 - `andando` - Boolean - recebe "falso" por padrão
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
-?
+
+var Pessoa = {
+    Nome: " Everton ",
+    Sobrenome: " Cunha ",
+    Sexo: " Femusculino",
+    Idade: 22,
+    Altura: 1.85,
+    Peso: 90,
+    Andando: false,
+    CaminhouQuantosMetros: 0,   
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-?
+
+Pessoa.aniversário = function (){
+    Pessoa.Idade++;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -35,31 +49,46 @@ valor dessa propriedade a quantidade passada por parâmetro;
 - Ele deverá modificar o valor da propriedade `andando` para o valor
 booleano que representa "verdadeiro";
 */
-?
+
+Pessoa.Andar = function (metros) {
+    Pessoa.CaminhouQuantosMetros += metros;
+    Pessoa.Andando = true;
+  };
 
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
-?
+
+Pessoa.Parar = function () {
+    Pessoa.Andando = false;
+}
 
 /*
 Crie um método chamado `nomeCompleto`, que retorne a frase:
 - "Olá! Meu nome é [NOME] [SOBRENOME]!"
 */
-?
+
+> Pessoa.NomeCompleto = function () {
+... return Pessoa.Nome + '' + Pessoa.Sobrenome;
+... }
 
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "Olá, eu tenho [IDADE] anos!"
 */
-?
+
+Pessoa.MostrarIdade = function (){
+    return "Olá eu tenho " + Pessoa.Idade + " Anos.";
+}
 
 /*
 Crie um método chamado `mostrarPeso`, que retorne a frase:
 - "Eu peso [PESO]Kg."
 */
-?
+Pessoa.MostrarPeso = function (){
+    return  "Olá eu peso " + Pessoa.Peso + "Kg"
+}
 
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
@@ -138,7 +167,7 @@ Agora vamos deixar a brincadeira um pouco mais divertida! :D
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
 retornar a string:
 - "Olá, eu sou o [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], meu peso é [PESO] e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-
+q
 Só que, antes de retornar a string, você vai fazer algumas validações:
 - Se o `sexo` de `pessoa` for "Feminino", a frase acima, no início da
 apresentação, onde diz "eu sou o", deve mostrar "a" no lugar do "o";
@@ -150,7 +179,26 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+Pessoa.Apresentação = function (){
+
+    var sexo = "o"
+    var idade = "ano"
+    var metro = "metros"
+
+    if (Pessoa.Sexo === "Feminino"){
+        sexo = "a"
+    }
+
+    if ( Pessoa.Idade !== 1){
+        idade = "anos"
+    }
+    if ( Pessoa.CaminhouQuantosMetros === 1){
+        metro = " metro"
+    }
+
+    return "Olá eu sou " + sexo + " " + Pessoa.Nome + " " + Pessoa.Sobrenome + ", tenho " + Pessoa.Idade + ' ' + idade + '.' + Pessoa.Altura + ". Meu Peso é " + Pessoa.Peso + ". E só hoje, eu já caminhei " + Pessoa.CaminhouQuantosMetros + ' ' + metro + ".";
+}
 
 // Agora, apresente-se ;)
 ?
