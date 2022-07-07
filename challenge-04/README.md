@@ -7,15 +7,51 @@ um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
-?
+
+var Istruthy = function ( x ){
+    return !!x ;
+
+}
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
-?
+
+> Istruthy(undefined)
+false
+
+> Istruthy( false)
+false
+
+> Istruthy( 0)
+false
+
+> Istruthy ( null)
+false
+
+> Istruthy ( NaN)
+false
+
+> Istruthy ( "")
+false
 
 /*
 Invoque a função criada acima passando como parâmetro 10 valores `truthy`.
 */
-?
+> Istruthy ( "Everton" )
+true
+
+> Istruthy ( 1 )
+true
+
+> Istruthy ( "carro" )
+true
+
+> Istruthy ( "Rei dos piratas" )
+true
+
+> Istruthy ( " Deck de Bomba é Op "   )
+true
+
+
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
@@ -29,35 +65,63 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 - `assentos` - Number - cinco por padrão
 - `quantidadePessoas` - Number - zero por padrão
 */
-?
+
+var Carro = { 
+        Marca: "GM",
+        Modelo: "Passat",
+        Placa: " BGQ-3289",
+        Ano: 2020,
+        Cor: "Branco Escuro",
+        QuantasPortas: 4,
+        Assentos: 5,
+        QuantidadePessoas: 0,
+
+}
 
 /*
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-?
+
+Carro.MudarCor = function (Cor){
+  Carro.Cor = Cor;
+}
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-?
+
+
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-?
+
+Carro.ObterCor = function () {
+
+    return Carro.Cor;
+}
 
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-?
+
+Carro.ObterMarca = function (){
+
+    return Carro.Marca;
+}
 
 /*
 Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-?
+
+Carro.ObterMarcaModelo = function (){
+
+    return "Este carro é " + Carro.Marca + " " + Carro.Modelo + ".";
+
+}
 
 /*
 Crie um método que irá adicionar pessoas no carro. Esse método terá as
@@ -85,38 +149,79 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+ 
+ //Branco Escuro
 
 // Mude a cor do carro para vermelho.
-?
+
+//> Carro.MudarCor ("Vermelho")
+undefined
+> Carro
+{
+  Marca: 'GM',
+  Modelo: 'Passat',
+  Placa: ' BGQ-3289',
+  Ano: 2020,
+  Cor: 'Vermelho',
+  QuantasPortas: 4,
+  Assentos: 5,
+  QuantidadePessoas: 0,
+  MudarCor: [Function (anonymous)],
+  ObterCor: [Function (anonymous)],
+  ObterMarca: [Function (anonymous)],
+  ObterMarcaModelo: [Function (anonymous)],
+  AddPessoas: [Function (anonymous)]
+}
+>
 
 // E agora, qual a cor do carro?
 ?
+
+//Vermelho
 
 // Mude a cor do carro para verde musgo.
-?
+
+> Carro.MudarCor("Verde Musgo")
+undefined
+>
 
 // E agora, qual a cor do carro?
-?
+
+// Verde Musgo
 
 // Qual a marca e modelo do carro?
-?
+
+//> Carro.ObterMarcaModelo()
+'Este carro é GM Passat.'
+>
 
 // Adicione 2 pessoas no carro.
-?
+
+> Carro.AddPessoas(2)
+'Já temos 2 pessoas no carro'
 
 // Adicione mais 4 pessoas no carro.
-?
+
+> Carro.AddPessoas (4)
+'Ainda cabem 3 Pessoas no carro.'
 
 // Faça o carro encher.
-?
+
+> Carro.AddPessoas(1)
+'O carro já está lotado'
 
 // Tire 4 pessoas do carro.
-?
+
+> Carro.AddPessoas (-4)
+'Já temos -4 pessoas no carro'
 
 // Adicione 10 pessoas no carro.
-?
+
+> Carro.AddPessoas(10)
+'Ainda cabem 4 Pessoas no carro.'
 
 // Quantas pessoas temos no carro?
-?
+
+1
+
 ```
